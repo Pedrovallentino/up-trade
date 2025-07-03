@@ -1,15 +1,9 @@
-@import "tailwindcss";
-
 #escolhaUmId{
-    background-color: blueviolet;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
+    background-color: aqua;
 }
 
 /*
-Este css deverá ser usado para estilizar as páginas do sistema a que eles se referem, de acordo 
+Esse css deverá ser usado para estilizar as páginas do sistema a que eles se referem, de acordo 
 com o que foi definido nos protótipos. Tudo que foi escrito é apenas um exemplo e deve ser alterado. 
 
 Esse comentário também deverá ser removido deste arquivo por quem começar a implementá-lo. 
