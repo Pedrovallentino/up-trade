@@ -1,0 +1,79 @@
+@startuml - UpTrade
+
+title Diagrama de Classes - UpTrade
+
+class Usuario {
+  +nome: String
+  +email: String
+  -senha: String
+}
+
+class Carteira {
+  -nome: String
+  -dataCriacao: Date
+  -valorAtual: number
+  +criarCarteira(): void
+  +excluirCarteira(): void
+  +ordenarCarteira(): void
+  +renomearCarteira(): void
+}
+
+class Meta {
+  -nome: String
+  -dataCriacao: Date
+  -valorAtual: number
+  -prazo: Date
+  -valorAlmejado: number
+  -concluida: boolean
+  +criarMeta(): void
+  +excluirMeta(): void
+  +ordenarMetas(): void
+  +renomearMeta(): void
+}
+
+class Poupanca {
+  -nome: String
+  -dataCriacao: Date
+  -valorAtual: number
+  +criarPoupanca(): void
+  +excluirPoupanca(): void
+  +ordenarPoupanca(): void
+  +renomearPoupanca(): void
+}
+
+class MovimentacaoCarteira {
+  -nome: String
+  -valor: number
+  -dataCriacao: Date
+  -modalidade: String
+  -tipo: String
+  +aplicarCapital(): void
+  +retirarCapital(): void
+  +excluirTransacoes(): void
+  +ordenarTransacoes(): void
+  +renomearTransacao(): void
+}
+
+class MovimentacaoMeta {
+  -valor: number
+  -dataCriacao: Date
+  +aplicarCapital(): void
+  +retirarCapital(): void
+}
+
+class MovimentacaoPoupanca {
+  -valor: number
+  -dataCriacao: Date
+  +aplicarCapital(): void
+  +retirarCapital(): void
+}
+
+' Relacionamentos
+Usuario "1" --> "*" Carteira : possui
+Carteira "1" --> "*" MovimentacaoCarteira : contém
+Usuario "1" --> "*" Meta : define
+Meta "1" --> "*" MovimentacaoMeta : movimenta
+Usuario "1" --> "*" Poupanca : possui
+Poupanca "1" --> "*" MovimentacaoPoupanca : movimenta
+
+@enduml
