@@ -1,15 +1,5 @@
 @import "tailwindcss";
 
-/* #escolhaUmId{
-    background-color: blueviolet;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-} */
-
-/*########################### HEADER E FOOTER ###########################*/
-
 /* Reset e base */
 * {
   margin: 0;
@@ -22,6 +12,8 @@ body {
   background-color: #f9f9f9;
   color: #333;
 }
+
+/*########################### HEADER E FOOTER ###########################*/
 
 /* Header */
 .header {
@@ -98,7 +90,6 @@ body {
   color: white;
   text-align: center;
   padding: 1rem;
-  margin-top: 2rem;
 }
 
 @media (max-width: 768px) {
@@ -121,7 +112,7 @@ body {
 /*########################### INDEX ###########################*/
 
 /* Página Inicial - Estilo dos botões */
-.pagina-inicial {
+.wallet-app-homepage {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -129,7 +120,7 @@ body {
   background-color: #eeeeee;
 }
 
-.painel {
+.wallet-app-panel {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -141,7 +132,7 @@ body {
   width: 280px;
 }
 
-.btn {
+.wallet-app-btn {
   display: flex;
   align-items: center;
   gap: 0.8rem;
@@ -155,31 +146,31 @@ body {
   transition: transform 0.2s ease;
 }
 
-.btn svg {
+.wallet-app-btn svg {
   flex-shrink: 0;
 }
 
-.btn:hover {
+.wallet-app-btn:hover {
   transform: scale(1.03);
 }
 
 /* Estilos específicos */
-.btn-carteiras {
+.wallet-app-btn-wallets {
   background-color: #4CAF50;
   /* verde */
 }
 
-.btn-metas {
+.wallet-app-btn-goals {
   background-color: #F44336;
   /* vermelho */
 }
 
-.btn-caixinhas {
+.wallet-app-btn-savings {
   background-color: #007BFF;
   /* azul */
 }
 
-.btn span {
+.wallet-app-btn span {
   text-align: left;
 }
 

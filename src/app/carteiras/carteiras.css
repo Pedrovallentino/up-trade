@@ -1,5 +1,95 @@
-#escolhaUmId{
-    background-color: aqua;
+.wallet-app-wallets-container {
+  background-color: #eeeeee;
+  padding: 2rem;
+  min-height: 80vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.wallet-app-wallets-header {
+  display: flex;
+  align-items: center;
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.wallet-app-wallets-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.wallet-app-sort-button,
+.wallet-app-create-button {
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-radius: 20px;
+  border: 1.5px solid #000;
+  background-color: white;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.wallet-app-create-button {
+  border: 1.5px solid #4CAF50;
+  color: #4CAF50;
+}
+
+.wallet-app-create-button:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.wallet-app-sort-button:hover {
+  background-color: #000;
+  color: white;
+}
+
+.wallet-app-wallet-card {
+  background-color: white;
+  border: 1.5px solid #333;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.wallet-app-wallet-name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.wallet-app-wallet-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wallet-app-wallet-balance {
+  font-size: 0.95rem;
+  font-weight: bold;
+}
+
+.wallet-app-positive-balance {
+  color: green;
+}
+
+.wallet-app-negative-balance {
+  color: red;
+}
+
+.wallet-app-delete-wallet {
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 /*
