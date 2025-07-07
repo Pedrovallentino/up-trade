@@ -86,7 +86,7 @@ body {
 
 /* Footer */
 .footer {
-  background-color: #1e90ff;
+  background-color: #00BCD4;
   color: white;
   text-align: center;
   padding: 1rem;
@@ -109,33 +109,38 @@ body {
 
 /*########################### HEADER E FOOTER ###########################*/
 
-/*########################### INDEX ###########################*/
+/*########################### PÁGINA INICIAL ###########################*/
 
-/* Página Inicial - Estilo dos botões */
-.wallet-app-homepage {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80vh;
-  background-color: #eeeeee;
-}
-
-.wallet-app-panel {
+/* Estrutura geral */
+.wallet-app-container {
+  padding: 2rem;
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
+  align-items: center; /* centraliza conteúdo horizontalmente */
+}
+
+/* Título */
+.wallet-title {
+  font-size: 1.3rem;
+  color: #228B22;
+  font-weight: 600;
+  text-align: left;
+  width: 100%;
+  margin-left: 120px ;
+}
+
+/* Botões principais */
+.wallet-buttons {
+  display: flex;
   gap: 1rem;
-  padding: 1.5rem;
-  background-color: #fff;
-  border-radius: 12px;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  width: 280px;
+  justify-content: center;
 }
 
 .wallet-app-btn {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.4rem;
   padding: 1rem;
   border: none;
   border-radius: 10px;
@@ -144,6 +149,13 @@ body {
   font-size: 1rem;
   cursor: pointer;
   transition: transform 0.2s ease;
+  justify-content: center;
+  width: 400px;
+  height: 100px;
+}
+
+span {
+  font-size: 26px;
 }
 
 .wallet-app-btn svg {
@@ -154,25 +166,192 @@ body {
   transform: scale(1.03);
 }
 
-/* Estilos específicos */
+/* Cores específicas */
 .wallet-app-btn-wallets {
-  background-color: #4CAF50;
-  /* verde */
+  background-color: #4CAF50; /* verde */
 }
 
 .wallet-app-btn-goals {
-  background-color: #F44336;
-  /* vermelho */
+  background-color: #F44336; /* vermelho */
 }
 
 .wallet-app-btn-savings {
-  background-color: #007BFF;
-  /* azul */
+  background-color: #00BCD4; /* azul claro */
 }
 
-.wallet-app-btn span {
-  text-align: left;
+/* Layout das colunas */
+.wallet-grid {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+  width: 1230px;
+
 }
+
+.wallet-content-wrapper {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: center; /* centraliza horizontalmente */
+}
+
+.wallet-column {
+  flex: 1;
+}
+
+.title-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wallet-section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.saidas {
+  color: #f44336;
+}
+
+.entradas {
+  color: #4CAF50;
+}
+
+.wallet-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.wallet-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.wallet-cell {
+  height: 60px;
+  border-radius: 6px;
+  flex: 1;
+}
+
+.cell-red {
+  background-color: #f9c0c0;
+}
+
+.cell-green {
+  background-color: #c8e6c9;
+}
+
+
+/*########################### MOVIMENTAÇÕES ###########################*/
+
+.wallet-page-container {
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 2rem auto;
+  width: 95%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Cabeçalho com título e botão */
+.wallet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4CAF50;
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.wallet-header-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.wallet-icon {
+  font-size: 1.3rem;
+}
+
+/* Botão "Criar nova carteira" */
+.create-wallet-btn {
+  background-color: white;
+  border: 2px solid #4CAF50;
+  color: #4CAF50;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.create-wallet-btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* Botão "Ordenar" */
+.sort-button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #555;
+  background-color: white;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  width: fit-content;
+}
+
+/* Lista de carteiras */
+.wallet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Item de carteira */
+.wallet-item {
+  background-color: white;
+  padding: 1rem;
+  border: 2px solid #333;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Ações: saldo + ícone */
+.wallet-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Saldo */
+.wallet-balance {
+  font-weight: bold;
+}
+
+.wallet-balance.positive {
+  color: #2e7d32;
+}
+
+.wallet-balance.negative {
+  color: #d32f2f;
+}
+
+/* Botão de lixeira */
+.trash-button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+}
+
 
 /*########################### INDEX ###########################*/
 
