@@ -71,13 +71,3 @@ export default function PaginaInicial() {
     </div>
   );
 }
-
-
-
-
-/*
-Este arquivo deverá ser implmentado como a página inicial do sistema. Tudo que foi dentro da div
-escrito é apenas um exemplo e deve ser alterado por quem for implementar. 
-
-Esse comentário também deverá ser removido deste arquivo por quem começar a implementá-lo. 
-*/

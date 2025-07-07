@@ -117,7 +117,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  align-items: center; /* centraliza conteúdo horizontalmente */
+  align-items: center;
+  /* centraliza conteúdo horizontalmente */
 }
 
 /* Título */
@@ -127,7 +128,7 @@ body {
   font-weight: 600;
   text-align: left;
   width: 100%;
-  margin-left: 120px ;
+  margin-left: 120px;
 }
 
 /* Botões principais */
@@ -168,15 +169,18 @@ span {
 
 /* Cores específicas */
 .wallet-app-btn-wallets {
-  background-color: #4CAF50; /* verde */
+  background-color: #4CAF50;
+  /* verde */
 }
 
 .wallet-app-btn-goals {
-  background-color: #F44336; /* vermelho */
+  background-color: #F44336;
+  /* vermelho */
 }
 
 .wallet-app-btn-savings {
-  background-color: #00BCD4; /* azul claro */
+  background-color: #00BCD4;
+  /* azul claro */
 }
 
 /* Layout das colunas */
@@ -192,7 +196,8 @@ span {
   display: flex;
   gap: 2rem;
   align-items: flex-start;
-  justify-content: center; /* centraliza horizontalmente */
+  justify-content: center;
+  /* centraliza horizontalmente */
 }
 
 .wallet-column {
@@ -242,6 +247,53 @@ span {
 .cell-green {
   background-color: #c8e6c9;
 }
+
+/*########################### NOT-FOUND ###########################*/
+
+.notfound-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  text-align: center;
+  padding: 2rem;
+  background-color: #f4f4f4;
+}
+
+.notfound-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.notfound-message {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+.notfound-link {
+  padding: 0.4rem 1rem;
+  background-color: transparent;
+  color: black;
+  border: 2px solid black;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.notfound-link:hover {
+  background-color: #1e90ff;
+  color: white;
+  border-color: #1e90ff;
+}
+
+/*########################### NOT-FOUND ###########################*/
 
 
 /*########################### MOVIMENTAÇÕES ###########################*/

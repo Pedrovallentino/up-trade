@@ -100,7 +100,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* fundo escuro */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* fundo escuro */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,7 +113,7 @@
   padding: 24px;
   border-radius: 12px;
   width: 300px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
 .wallet-app-modal h3 {
@@ -136,7 +137,121 @@
 
 /* ========================== */
 
+/*########################### MOVIMENTAÇÕES ###########################*/
 
+.transactions-container {
+  padding: 2rem;
+  background-color: #eeeeee;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+
+/* Header verde com ícone */
+.transactions-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+}
+
+/* Área de ações */
+.transactions-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.action-button {
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-radius: 20px;
+  border: 1.5px solid #000;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.register-button {
+  border: 1.5px solid #4CAF50;
+  color: #4CAF50;
+}
+
+.register-button:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.total-balance {
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border: 1.5px solid #333;
+  border-radius: 20px;
+  background-color: white;
+}
+
+/* Cartões */
+.transaction-card {
+  background-color: white;
+  border: 1.5px solid #333;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.transaction-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.transaction-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.transaction-bottom {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.transaction-balance {
+  font-size: 0.95rem;
+  font-weight: bold;
+}
+
+.transaction-deadline {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.positive {
+  color: green;
+}
+
+.negative {
+  color: red;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/*########################### MOVIMENTAÇÕES ###########################*/
 
 /*
 Esse css deverá ser usado para estilizar as páginas do sistema a que eles se referem, de acordo 
