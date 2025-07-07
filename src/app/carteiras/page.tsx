@@ -3,10 +3,16 @@
 import "./carteiras.css";
 import { useState } from "react";
 
+type Carteira = {
+  nome: string;
+};
+
 export default function Carteiras() {
   const [mostrarModal, setMostrarModal] = useState(false);
   const [nomeCarteira, setNomeCarteira] = useState("");
-  const [carteiras, setCarteiras] = useState<string[]>([]);
+  const [carteiras, setCarteiras] = useState<Carteira[]>([]);
+  const [editandoIndex, setEditandoIndex] = useState<number | null>(null);
+  const [nomeEditando, setNomeEditando] = useState("");
 
   function abrirModal() {
     setMostrarModal(true);
@@ -21,12 +27,30 @@ export default function Carteiras() {
     e.preventDefault();
     if (!nomeCarteira.trim()) return;
 
-    setCarteiras((prev) => [...prev, nomeCarteira]);
+    setCarteiras((prev) => [...prev, { nome: nomeCarteira }]);
     fecharModal();
   }
 
   function excluirCarteira(index: number) {
     setCarteiras((prev) => prev.filter((_, i) => i !== index));
+  }
+
+  function iniciarEdicao(index: number, nomeAtual: string) {
+    setEditandoIndex(index);
+    setNomeEditando(nomeAtual);
+  }
+
+  function salvarEdicao(index: number) {
+    if (!nomeEditando.trim()) return;
+    setCarteiras((prev) =>
+      prev.map((c, i) => (i === index ? { ...c, nome: nomeEditando } : c))
+    );
+    setEditandoIndex(null);
+  }
+
+  function cancelarEdicao() {
+    setEditandoIndex(null);
+    setNomeEditando("");
   }
 
   return (
@@ -54,15 +78,43 @@ export default function Carteiras() {
       </div>
 
       {/* Lista de carteiras */}
-      {carteiras.map((nome, index) => (
+      {carteiras.map((carteira, index) => (
         <div className="wallet-app-wallet-card" key={index}>
-          <span className="wallet-app-wallet-name">{nome}</span>
+          {editandoIndex === index ? (
+            <input
+              className="wallet-app-wallet-edit-input"
+              value={nomeEditando}
+              onChange={(e) => setNomeEditando(e.target.value)}
+              onBlur={() => salvarEdicao(index)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                  salvarEdicao(index);
+                } else if (e.key === "Escape") {
+                  cancelarEdicao();
+                }
+              }}
+              autoFocus
+            />
+          ) : (
+            <span
+              className="wallet-app-wallet-name"
+              onClick={() => iniciarEdicao(index, carteira.nome)}
+              style={{ cursor: "pointer" }}
+              title="Clique para editar"
+            >
+              {carteira.nome}
+            </span>
+          )}
+
           <div className="wallet-app-wallet-details">
             <span className="wallet-app-wallet-balance wallet-app-positive-balance">
               Saldo: R$ 0,00
             </span>
             <div className="wallet-app-wallet-actions">
-              <button title="Editar" className="wallet-app-edit-btn">✏️</button>
+              <button title="Editar" className="wallet-app-edit-btn">
+                ✏️
+              </button>
               <button
                 title="Excluir"
                 className="wallet-app-delete-btn"
@@ -75,7 +127,7 @@ export default function Carteiras() {
         </div>
       ))}
 
-      {/* Modal */}
+      {/* Modal de criação */}
       {mostrarModal && (
         <div className="wallet-app-modal-overlay">
           <div className="wallet-app-modal">
@@ -103,6 +155,7 @@ export default function Carteiras() {
     </div>
   );
 }
+
 
 
 
