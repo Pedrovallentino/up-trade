@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# UpTrade — Sistema de Gestão Financeira Pessoal
 
-## Getting Started
+O **UpTrade** é um sistema de controle financeiro pessoal, desenvolvido com foco em **organização de carteiras**, **metas financeiras** e **caixinhas de poupança**. Ele permite ao usuário registrar movimentações, acompanhar saldos e planejar suas finanças de forma visual, simples e intuitiva.
 
-First, run the development server:
+## Tecnologias Utilizadas
+
+- [Next.js](https://nextjs.org/)
+- React.js
+- TypeScript
+- CSS Modules ou CSS Global
+- Node.js
+
+## Instalação e Execução
+
+### Pré-requisitos
+
+Antes de iniciar, certifique-se de que você tem os seguintes itens instalados:
+
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/) ou [Yarn](https://yarnpkg.com/)
+
+### 1. Clone o repositório
 
 ```bash
+cd uptrade
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Abra seu navegador e acesse:
+http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Estrutura de Pastas
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+UP-TRADE/
+├── .next/                          # Diretório gerado automaticamente pelo Next.js
+├── node_modules/                  # Dependências instaladas pelo npm/yarn
+├── public/
+│   └── images/
+│       ├── logoUpTrade.png        # Logo do sistema
+│       └── businessLayer.plantuml # Diagrama de camada de negócio
+├── src/
+│   └── app/
+│       ├── carteiras/
+│       │   ├── movimentacoes/
+│       │   │   └── page.tsx       # Página de movimentações dentro da carteira
+│       │   ├── page.tsx           # Página principal de carteiras
+│       │   └── carteiras.css      # Estilização específica das carteiras
+│       ├── page.tsx               # Página inicial (landing page)
+│       ├── layout.tsx             # Layout principal da aplicação
+│       ├── not-found.tsx          # Página 404 personalizada
+│       └── globals.css            # Estilos globais da aplicação
+├── .gitignore                     # Arquivos e pastas ignorados pelo Git
+├── next-env.d.ts                  # Tipagens automáticas do ambiente Next.js
+├── next.config.ts                 # Configurações do framework Next.js
+├── package.json                   # Metadados e scripts do projeto
+├── package-lock.json              # Versões exatas das dependências (npm)
+├── postcss.config.mjs             # Configuração do PostCSS
+├── tsconfig.json                  # Configurações do TypeScript
+└── README.md                      # Documentação do projeto
+```

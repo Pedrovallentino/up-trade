@@ -63,6 +63,7 @@
 }
 
 .wallet-app-wallet-name {
+  display: flex;
   font-size: 1rem;
   font-weight: 600;
 }
@@ -158,6 +159,16 @@
   font-weight: bold;
   font-size: 1.1rem;
   margin-bottom: 1.2rem;
+}
+
+.transactions-name {
+  margin-bottom: 1rem; 
+}
+
+.transactions-name span {
+  font-size: 18px; 
+  font-weight: bold;
+  color: #333;
 }
 
 /* Área de ações */
