@@ -1,0 +1,95 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+
+model Usuario {
+  id_usuario Int       @id @default(autoincrement())
+  nome       String    @db.VarChar(100)
+  email      String    @unique @db.VarChar(100)
+  senha      String    @db.VarChar(15)
+
+  carteiras  Carteira[]
+  metas      Meta[]
+  poupancas  Poupanca[]
+}
+
+model Carteira {
+  id_carteira Int                    @id @default(autoincrement())
+  nome        String                 @db.VarChar(100)
+  valorAtual  Decimal               @db.Decimal(10, 2)
+  dataCriacao DateTime
+  id_usuario  Int
+
+  usuario     Usuario                @relation(fields: [id_usuario], references: [id_usuario])
+  movimentacoes MovimentacaoCarteira[]
+}
+
+model MovimentacaoCarteira {
+  id_movimentacaoCarteira Int      @id @default(autoincrement())
+  nome                    String   @db.VarChar(100)
+  valor                   Decimal  @db.Decimal(10, 2)
+  dataCriacao             DateTime
+  modalidade              String   @db.VarChar(10)
+  tipo                    String   @db.VarChar(10)
+  id_carteira             Int
+
+  carteira                Carteira @relation(fields: [id_carteira], references: [id_carteira])
+}
+
+model Meta {
+  id_meta        Int       @id @default(autoincrement())
+  nome           String    @db.VarChar(100)
+  dataCriacao    DateTime
+  valorAtual     Decimal   @db.Decimal(10, 2)
+  prazo          DateTime
+  valorAlmejado  Decimal   @db.Decimal(10, 2)
+  concluida      Boolean   @default(false)
+  id_usuario     Int
+
+  usuario        Usuario           @relation(fields: [id_usuario], references: [id_usuario])
+  movimentacoes  MovimentacaoMeta[]
+}
+
+model MovimentacaoMeta {
+  id_movimentacaoMeta Int      @id @default(autoincrement())
+  valor                Decimal @db.Decimal(10, 2)
+  dataCriacao          DateTime
+  id_meta              Int
+
+  meta                 Meta     @relation(fields: [id_meta], references: [id_meta])
+}
+
+model Poupanca {
+  id_poupanca  Int                   @id @default(autoincrement())
+  nome         String                @db.VarChar(100)
+  dataCriacao  DateTime
+  valorAtual   Decimal              @db.Decimal(10, 2)
+  id_usuario   Int
+
+  usuario      Usuario               @relation(fields: [id_usuario], references: [id_usuario])
+  movimentacoes MovimentacaoPoupanca[]
+}
+
+model MovimentacaoPoupanca {
+  id_movimentacaoPoupanca Int      @id @default(autoincrement())
+  valor                   Decimal  @db.Decimal(10, 2)
+  dataCriacao             DateTime
+  id_poupanca             Int
+
+  poupanca                Poupanca @relation(fields: [id_poupanca], references: [id_poupanca])
+}
+

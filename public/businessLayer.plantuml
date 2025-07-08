@@ -9,16 +9,19 @@ class Usuario {
 }
 
 class Carteira {
+  -id_carteira: number
   -nome: String
   -dataCriacao: Date
   -valorAtual: number
-  +criarCarteira(): void
-  +excluirCarteira(): void
+  +criarCarteira(id_carteira: number): void
+  +excluirCarteira(id_carteira: number): void
   +ordenarCarteira(): void
-  +renomearCarteira(): void
+  +nomearCarteira(string nome): void
+  +renomearCarteira(string novoNome): void
 }
 
 class Meta {
+  -idMeta: number
   -nome: String
   -dataCriacao: Date
   -valorAtual: number
@@ -28,16 +31,19 @@ class Meta {
   +criarMeta(): void
   +excluirMeta(): void
   +ordenarMetas(): void
+  +nomearMeta(string nome): void
   +renomearMeta(): void
 }
 
 class Poupanca {
+  -idPoupanca: number
   -nome: String
   -dataCriacao: Date
   -valorAtual: number
   +criarPoupanca(): void
   +excluirPoupanca(): void
   +ordenarPoupanca(): void
+  +nomearPoupanca(string nome): void
   +renomearPoupanca(): void
 }
 
@@ -47,25 +53,31 @@ class MovimentacaoCarteira {
   -dataCriacao: Date
   -modalidade: String
   -tipo: String
-  +aplicarCapital(): void
-  +retirarCapital(): void
+  -id_carteira: number 
+  +aplicarCapital(number valor): void
+  +retirarCapital(number valor): void
+  +aplicarCapitalPeriodicamente(number valor, string periodicidade): void
+  +retirarCapitalPeriodicamente(number valor, string periodicidade): void
   +excluirTransacoes(): void
   +ordenarTransacoes(): void
+  +nomearTransacaoCarteira(string nome): void
   +renomearTransacao(): void
 }
 
 class MovimentacaoMeta {
   -valor: number
   -dataCriacao: Date
-  +aplicarCapital(): void
-  +retirarCapital(): void
+  -idMeta: number 
+  +aplicarCapital(number valor): void
+  +retirarCapital(number valor): void
 }
 
 class MovimentacaoPoupanca {
   -valor: number
   -dataCriacao: Date
-  +aplicarCapital(): void
-  +retirarCapital(): void
+  -idPoupanca: number
+  +aplicarCapital(number valor): void
+  +retirarCapital(number valor): void
 }
 
 ' Relacionamentos
