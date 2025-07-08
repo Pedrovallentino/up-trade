@@ -21,26 +21,26 @@ export class RepositorioCarteira {
     });
   }
 
-  static async renomear(id_carteira: number, novoNome: string): Promise<Carteira> {
+  static async renomear(id_carteira: number, novoNome: string){
     return await prisma.carteira.update({
       where: { id_carteira },
       data: { nome: novoNome }
     });
   }
 
-  static async listarOrdenadoPorData(ordem: "asc" | "desc" = "asc"): Promise<Carteira[]> {
+  static async listarOrdenadoPorData(ordem: "asc" | "desc" = "asc"){
     return await prisma.carteira.findMany({
       orderBy: { dataCriacao: ordem }
     });
   }
 
-  static async buscarPorId(id_carteira: number): Promise<Carteira> {
+  static async buscarPorId(id_carteira: number){
     return await prisma.carteira.findUnique({
       where: { id_carteira }
     });
   }
 
-  static async listarTodas(): Promise<Carteira[]> {
+  static async listarTodas(){
     return await prisma.carteira.findMany();
   }
 }
